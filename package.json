@@ -1,0 +1,10 @@
+{
+  "name": "minimal-editorial-lp",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "node -e \"console.log('No build step required for test environment')\"",
+    "start": "node server.mjs"
+  }
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orbital Field Preview</title>
+  <style>
+    :root{--ink:#111;--paper:#fff;--muted:#666;--line:#e7e7e7;--accent:#2F6BFF}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:#fff}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 24px}.top{border-bottom:1px solid var(--line)}.banner{font-size:12px;text-align:center;padding:8px;background:#f5f5f5}
+    .head{display:flex;justify-content:space-between;align-items:center;padding:18px 0}.menu{border:1px solid #111;background:transparent;padding:8px 14px;cursor:pointer}
+    section{padding:96px 0}.hero{display:grid;gap:40px}@media(min-width:900px){.hero{grid-template-columns:1fr 1fr;align-items:end}}
+    .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#555}.h1{font-size:clamp(42px,8vw,90px);line-height:.95;margin:12px 0}
+    .muted{color:var(--muted)} .box{border:1px solid var(--line);background:#f6f6f6;aspect-ratio:4/5}
+    .grid2{display:grid;gap:40px}@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr}}
+    .cards{display:grid;gap:12px}@media(min-width:900px){.cards{grid-template-columns:repeat(3,1fr)}}
+    .card{border:1px solid var(--line);padding:22px;box-shadow:0 6px 20px -12px rgba(17,17,17,.25)}
+    footer{border-top:1px solid var(--line);padding:56px 0}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="banner">New open studio starts this spring — seats are limited.</div><div class="wrap head"><strong>ORBITAL FIELD</strong><button class="menu">Menu</button></div></header>
+  <main class="wrap">
+    <section class="hero"><div><p class="eyebrow">Project</p><h1 class="h1">Quiet Design,<br>Bold Perspective,<br>Shared Futures.</h1><p class="muted">テスト環境で確認できる静的プレビューです。</p></div><div class="box"></div></section>
+    <section><div class="grid2"><div><p class="eyebrow">Who We Are</p><h2>情報の輪郭を、読み手中心で再設計する。</h2><p class="muted">プロトタイプの可視化用に、最低限の静的表示を提供しています。</p></div><div class="box" style="aspect-ratio:4/3"></div></div></section>
+    <section><p class="eyebrow">For Business</p><h2>実務に直結する3つの支援</h2><div class="cards"><article class="card"><strong>01</strong><p>Brand Editorial Support</p></article><article class="card"><strong>02</strong><p>Workshop Design</p></article><article class="card"><strong>03</strong><p>Interface Review</p></article></div></section>
+  </main>
+  <footer><div class="wrap"><small>© 2026 Orbital Field</small></div></footer>
+</body>
+</html>

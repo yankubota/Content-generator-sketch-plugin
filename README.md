@@ -1,62 +1,39 @@
-Content Generator for Sketch
-============================
+# Minimal Editorial LP Preview
 
-Sketch generator allows you quickly create dummy data such as avatars, names, geo location data etc.
+このリポジトリは、依存なしの軽量プレビューサーバーで LP を表示します。
 
-## Demo
-#####Generating pictures
+## 起動方法
 
-![Generating thumbnails](https://raw.githubusercontent.com/timuric/Content-generator-for-sketch-app/master/tutorial/userpics.gif)
+```bash
+npm install
+npm run dev
+```
 
-#####Generating names
+- ローカル: `http://localhost:3000`
+- コンテナ/リモート環境: `http://<環境のIPまたは転送URL>:3000`
 
-![Generating names](https://raw.githubusercontent.com/timuric/Content-generator-for-sketch-app/master/tutorial/names.gif)
+## 閲覧できないとき
 
-#####Generating dummy text
+1. すでに 3000 番ポートを使っていないか確認
 
-![Generating text](https://raw.githubusercontent.com/timuric/Content-generator-for-sketch-app/master/tutorial/lorem.gif)
+```bash
+lsof -i :3000
+```
 
-#####Generating strings
-![custom string](https://cloud.githubusercontent.com/assets/5709624/8092928/c18d6d76-0fbd-11e5-962d-417165cc1a2d.gif)
+2. 別ポートで起動
 
-You can create a custom string by combining any of these options:
-- plain text (example: banana)
-- random number from range (example: [0-20] )
-- random item from an array (example: [banana~apple~grapes] )
+```bash
+PORT=4000 npm run dev
+```
 
-An example of a combined string: $[0-999],[10-99] [new~used~old]
+3. ホストを明示（必要な環境のみ）
 
-Which would result in "$321,34 old" or "$12,75 new"
+```bash
+HOST=0.0.0.0 PORT=3000 npm run dev
+```
 
+## 構成
 
-## Adding custom images
-
-1. In Sketch app `Plugins > Reveal Plugins folder...`
-2. Open Content Generator plugin folder
-3. Add your photos to Data > Photos > my-photos
-
-## Installation
-1. Download Zip and Extract it to a folder
-2. In Sketch app `Plugins > Reveal Plugins folder...`
-3. Place the extracted folder directly to the Plugins folder (nesting might not work atm)
-
-## Upcoming features
-* More types of data
-* Fetch content directly from different online sources 
-* Easier extensibility
-
-## Feature requests, bugs & feedback
-
-Ping me on [twitter](http://twitter.com/timur_carpeev) or follow for updates.
-Best way to submit bugs is to attach a screenshot of the console app [like so](https://www.dropbox.com/s/e3g4g49j1lwkp5j/Screenshot%202014-06-09%2022.33.03.png) (use "sketch" in filter box)
-
-## Contributing
-Any contribution is welcome, if you want to add more data sets or even your photo to the set let me know. Also if you can submit better demo gifs it would be vey much appreciated.
-
-## Credits
-* Photo collection [Unsplash](http://unsplash.com/)
-* User pics [Uifaces](http://uifaces.com/)
-* User names [Uinames](http://uinames.com/)
-* Random data [Mockaroo](http://mockaroo.com/)
-
-
+- `server.mjs`: 依存なしの静的サーバー
+- `static/index.html`: LPプレビュー本体
+- `app/`, `components/`, `lib/`: Next.js版の実装ソース（参照用）
